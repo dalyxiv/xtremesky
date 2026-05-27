@@ -1,29 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { Experience } from "@/components/site/Experience";
+import { Routes as FlightRoutes } from "@/components/site/Routes";
+import { Booking } from "@/components/site/Booking";
+import { VIP } from "@/components/site/VIP";
+import { PerfectFor } from "@/components/site/PerfectFor";
+import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Xtreme Sky Egypt — Private Helicopter Tours Over Cairo & Giza" },
+      { name: "description", content: "Exclusive private helicopter tours over the Pyramids of Giza and Cairo. Only 4 seats per flight. Gold and Platinum VIP routes." },
+      { property: "og:title", content: "Xtreme Sky Egypt — Cairo From Above" },
+      { property: "og:description", content: "Experience a rare aerial perspective of ancient wonders and modern Cairo. Unforgettable. Exclusive. Yours." },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="bg-onyx text-foreground">
+      <Nav />
+      <Hero />
+      <Experience />
+      <FlightRoutes />
+      <Booking />
+      <VIP />
+      <PerfectFor />
+      <Footer />
+    </main>
   );
 }
