@@ -17,10 +17,10 @@ export function Hero() {
     <section id="top" className="relative h-screen min-h-[680px] w-full overflow-hidden">
       <div
         ref={bgRef}
-        className="absolute inset-0 -z-10 bg-cover bg-center will-change-transform"
-        style={{ backgroundImage: `url(${heroImg})` }}
+        className="absolute inset-0 -z-10 bg-cover bg-center will-change-transform blur-sm scale-110"
+        style={{ backgroundImage: `url(${heroImg})`, filter: "blur(6px) brightness(0.75)" }}
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-onyx/70 via-onyx/40 to-onyx" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-onyx/80 via-onyx/55 to-onyx" />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <p className="mb-6 text-xs md:text-sm uppercase tracking-[0.6em] text-[var(--gold)]/90 animate-[fade-up_1s_ease-out]">
