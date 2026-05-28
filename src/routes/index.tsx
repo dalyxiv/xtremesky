@@ -38,6 +38,7 @@ function Index() {
       <Booking />
       <VIP />
       <PerfectFor />
+      <Gallery />
       <Contact />
       <Footer />
     </main>
