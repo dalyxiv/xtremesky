@@ -12,9 +12,12 @@ export function Footer() {
   return (
     <footer className="border-t border-gold/20 bg-onyx py-14 px-6">
       <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8">
-        <div className="text-center md:text-left">
-          <p className="font-serif text-xl tracking-[0.25em] text-gradient-gold">XTREME SKY EGYPT</p>
-          <p className="mt-2 text-sm text-foreground/60">Private helicopter tours over Cairo & Giza.</p>
+        <div className="flex items-center gap-4 text-center md:text-left">
+          <img src={new URL("../../assets/logo.jpeg", import.meta.url).href} alt="Xtreme Sky Egypt" className="size-16 rounded-full object-cover ring-1 ring-white/30" />
+          <div>
+            <p className="font-serif text-xl tracking-[0.25em] font-semibold text-white">XTREME SKY EGYPT</p>
+            <p className="mt-2 text-sm text-foreground/60">Private helicopter tours over Cairo & Giza.</p>
+          </div>
         </div>
         <div className="flex items-center gap-3">
           {socials.map(({ icon: Icon, href, label }) => (

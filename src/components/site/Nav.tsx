@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logo from "@/assets/logo.jpeg";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,19 +18,26 @@ export function Nav() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#top" className="font-serif text-xl md:text-2xl tracking-[0.25em] text-gradient-gold">
-          XTREME SKY EGYPT
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+        <a href="#top" className="flex items-center gap-3">
+          <img
+            src={logo}
+            alt="Xtreme Sky Egypt"
+            className="size-12 md:size-14 rounded-full object-cover ring-1 ring-white/30 shadow-[0_0_25px_-5px_rgba(255,255,255,0.4)]"
+          />
+          <span className="hidden sm:block font-serif text-lg md:text-xl tracking-[0.28em] font-semibold text-white">
+            XTREME SKY
+          </span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-foreground/80">
-          <a href="#experience" className="hover:text-[var(--gold)] transition">Experience</a>
-          <a href="#routes" className="hover:text-[var(--gold)] transition">Routes</a>
-          <a href="#booking" className="hover:text-[var(--gold)] transition">Booking</a>
-          <a href="#vip" className="hover:text-[var(--gold)] transition">VIP</a>
+          <a href="#experience" className="hover:text-white transition">Experience</a>
+          <a href="#routes" className="hover:text-white transition">Routes</a>
+          <a href="#booking" className="hover:text-white transition">Booking</a>
+          <a href="#vip" className="hover:text-white transition">VIP</a>
         </nav>
         <a
           href="#routes"
-          className="relative inline-flex items-center rounded-full border border-gold/60 px-5 py-2 text-sm uppercase tracking-widest text-[var(--gold)] transition hover:bg-[var(--gold)] hover:text-[var(--onyx)] hover:shadow-[0_0_30px_-2px_var(--gold)]"
+          className="relative inline-flex items-center rounded-full border border-white/60 px-5 py-2 text-sm uppercase tracking-widest text-white transition hover:bg-white hover:text-[var(--onyx)] hover:shadow-[0_0_30px_-2px_rgba(255,255,255,0.6)]"
         >
           Book Now
         </a>
