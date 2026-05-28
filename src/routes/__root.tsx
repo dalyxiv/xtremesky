@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Xtreme Sky Egypt" },
+      { name: "description", content: "We are the safe eXTREME" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Xtreme Sky Egypt" },
+      { property: "og:description", content: "We are the safe eXTREME" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Xtreme Sky Egypt" },
+      { name: "twitter:description", content: "We are the safe eXTREME" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/pC9q6a15xyZ0GBB8rbzoBfOcsKv2/social-images/social-1779975461735-1.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/pC9q6a15xyZ0GBB8rbzoBfOcsKv2/social-images/social-1779975461735-1.webp" },
     ],
     links: [
       {
