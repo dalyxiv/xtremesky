@@ -7,8 +7,8 @@ import { Booking } from "@/components/site/Booking";
 import { VIP } from "@/components/site/VIP";
 import { PerfectFor } from "@/components/site/PerfectFor";
 import { Footer } from "@/components/site/Footer";
-import { Contact } from "@/components/site/Contact";
 import { Gallery } from "@/components/site/Gallery";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
