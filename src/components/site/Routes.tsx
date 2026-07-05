@@ -85,21 +85,20 @@ export function Routes() {
             <div>
               <p className="text-xs uppercase tracking-[0.4em] text-[var(--platinum)]">Platinum Route</p>
               <h3 className="font-serif text-3xl md:text-4xl text-gradient-platinum mt-2">25 Minutes</h3>
-              <p className="text-foreground/70 mt-1">Cairo VIP Grand Tour</p>
+              <p className="text-foreground/70 mt-1">The full experience</p>
             </div>
             <Plane className="size-10 text-[var(--platinum)] -rotate-45" />
           </div>
 
           <div className="mb-8 rounded-xl border border-[var(--platinum)]/40 bg-onyx/60 p-5">
-            <p className="text-3xl font-serif text-gradient-platinum">$375<span className="text-base text-foreground/60"> / person</span></p>
-            <p className="text-sm text-foreground/60 mt-1">4 passengers fixed · $1,500 total flight</p>
+            <p className="text-3xl font-serif text-gradient-platinum">18500 EGP<span className="text-base text-foreground/60"> / person</span></p>
           </div>
 
           <Timeline items={platinum} tone="platinum" />
 
-          <a href="#booking" className="mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm uppercase tracking-[0.3em] font-semibold text-[var(--onyx)] transition hover:shadow-[0_0_40px_-2px_var(--platinum)]"
+          <a href="#contact" className="mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm uppercase tracking-[0.3em] font-semibold text-[var(--onyx)] transition hover:shadow-[0_0_40px_-2px_var(--platinum)]"
             style={{ background: "var(--gradient-platinum)" }}>
-            Book Platinum Route
+            Book Your Flight
           </a>
         </article>
       </div>
