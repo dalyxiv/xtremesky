@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/logo.jpeg";
 
 export function Nav() {
@@ -19,7 +20,7 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-        <a href="#top" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img
             src={logo}
             alt="Xtreme Sky Egypt"
@@ -28,19 +29,19 @@ export function Nav() {
           <span className="hidden sm:block font-serif text-lg md:text-xl tracking-[0.28em] font-semibold text-white">
             XTREME SKY
           </span>
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-foreground/80">
-          <a href="#experience" className="hover:text-white transition">Experience</a>
-          <a href="#routes" className="hover:text-white transition">Routes</a>
-          <a href="#booking" className="hover:text-white transition">Booking</a>
-          <a href="#vip" className="hover:text-white transition">VIP</a>
+          <a href="/#experience" className="hover:text-white transition">Experience</a>
+          <a href="/#routes" className="hover:text-white transition">Routes</a>
+          <a href="/#vip" className="hover:text-white transition">VIP</a>
+          <Link to="/refund" className="hover:text-white transition">Refund</Link>
         </nav>
-        <a
-          href="#contact"
+        <Link
+          to="/booking"
           className="relative inline-flex items-center rounded-full border border-white/60 px-5 py-2 text-sm uppercase tracking-widest text-white transition hover:bg-white hover:text-[var(--onyx)] hover:shadow-[0_0_30px_-2px_rgba(255,255,255,0.6)]"
         >
           Book Now
-        </a>
+        </Link>
       </div>
     </header>
   );
