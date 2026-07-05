@@ -36,7 +36,7 @@ export function Nav() {
           <a href="#vip" className="hover:text-white transition">VIP</a>
         </nav>
         <a
-          href="#routes"
+          href="#contact"
           className="relative inline-flex items-center rounded-full border border-white/60 px-5 py-2 text-sm uppercase tracking-widest text-white transition hover:bg-white hover:text-[var(--onyx)] hover:shadow-[0_0_30px_-2px_rgba(255,255,255,0.6)]"
         >
           Book Now
