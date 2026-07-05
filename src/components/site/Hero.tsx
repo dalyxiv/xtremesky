@@ -228,3 +228,80 @@ function Pyramid({
     </div>
   );
 }
+
+function Obelisk({ left, bottom, height, delay }: { left: string; bottom: string; height: number; delay: string }) {
+  const width = height * 0.14;
+  return (
+    <div
+      className="absolute"
+      style={{
+        left,
+        bottom,
+        width,
+        height,
+        transform: "translate(-50%, 0) rotateX(-58deg) rotateZ(8deg)",
+        animation: `float 7s ease-in-out infinite ${delay}`,
+        filter: "drop-shadow(0 0 25px oklch(0.85 0.13 235 / 0.55))",
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          bottom: 0,
+          width: "100%",
+          height: "88%",
+          background:
+            "linear-gradient(90deg, oklch(0.45 0.07 70) 0%, oklch(0.72 0.09 70) 50%, oklch(0.45 0.07 70) 100%)",
+          clipPath: "polygon(20% 100%, 80% 100%, 70% 0%, 30% 0%)",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          left: "30%",
+          top: 0,
+          width: "40%",
+          height: "12%",
+          background: "oklch(0.85 0.13 235)",
+          clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)",
+        }}
+      />
+    </div>
+  );
+}
+
+function FloatingGlyph({
+  char,
+  left,
+  right,
+  top,
+  size,
+  delay,
+  duration,
+}: {
+  char: string;
+  left?: string;
+  right?: string;
+  top: string;
+  size: number;
+  delay: string;
+  duration: string;
+}) {
+  return (
+    <div
+      className="absolute font-serif text-[var(--gold-bright)]/45"
+      style={{
+        left,
+        right,
+        top,
+        fontSize: `${size}px`,
+        transform: "rotateX(-58deg) rotateZ(8deg)",
+        animation: `float ${duration} ease-in-out infinite ${delay}`,
+        textShadow: "0 0 25px oklch(0.85 0.13 235 / 0.6)",
+      }}
+    >
+      {char}
+    </div>
+  );
+}
