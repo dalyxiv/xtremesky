@@ -10,9 +10,10 @@ export function Contact() {
     const body = encodeURIComponent(
       `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nDesired Flight: ${form.flight}\n\n${form.message}`
     );
-    window.location.href = `mailto:bookings@xtremesky.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@xtremeskyegypt.com?subject=${subject}&body=${body}`;
     setSent(true);
   };
+
 
   const onChange = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value.slice(0, 1000) }));
@@ -91,7 +92,8 @@ export function Contact() {
           </button>
           {sent && (
             <p className="text-center text-sm text-[var(--gold-bright)]">
-              Opening your email app… If nothing happens, write us at bookings@xtremesky.com
+              Opening your email app… If nothing happens, write us at info@xtremeskyegypt.com
+
             </p>
           )}
         </form>
