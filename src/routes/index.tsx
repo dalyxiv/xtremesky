@@ -39,7 +39,7 @@ function Index() {
       <VIP />
       <PerfectFor />
       <Gallery />
-      <Contact />
+      
       <Footer />
     </main>
   );
