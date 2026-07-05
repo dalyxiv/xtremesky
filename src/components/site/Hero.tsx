@@ -67,34 +67,55 @@ export function Hero() {
           <Pyramid size={280} left="28%" bottom="10%" delay="1s" glow="var(--platinum)" />
           {/* Menkaure */}
           <Pyramid size={200} left="66%" bottom="6%" delay="2s" glow="var(--gold-bright)" />
+          {/* Distant pyramids */}
+          <Pyramid size={120} left="12%" bottom="4%" delay="3s" glow="var(--platinum)" />
+          <Pyramid size={140} left="82%" bottom="14%" delay="1.8s" glow="var(--gold-bright)" />
 
-          {/* Ankh symbol floating */}
+          {/* Obelisks */}
+          <Obelisk left="8%" bottom="26%" height={180} delay="0.5s" />
+          <Obelisk left="92%" bottom="30%" height={200} delay="2.2s" />
+
+          {/* Sphinx silhouette */}
           <div
-            className="absolute text-[var(--gold-bright)]/40 font-serif"
+            className="absolute"
             style={{
-              left: "12%",
-              top: "22%",
-              fontSize: "80px",
-              transform: "rotateX(-58deg) rotateZ(8deg)",
-              animation: "float 6s ease-in-out infinite",
-              textShadow: "0 0 30px oklch(0.85 0.13 235 / 0.6)",
+              left: "58%",
+              bottom: "2%",
+              width: 220,
+              height: 90,
+              transform: "translate(-50%, 0) rotateX(-58deg) rotateZ(8deg)",
+              background:
+                "radial-gradient(ellipse at 30% 60%, oklch(0.55 0.09 70 / 0.85), transparent 70%)",
+              filter: "drop-shadow(0 0 30px oklch(0.85 0.13 235 / 0.5))",
+              animation: "float 9s ease-in-out infinite 1s",
+              clipPath:
+                "polygon(0% 100%, 8% 55%, 18% 40%, 28% 32%, 34% 20%, 42% 22%, 46% 32%, 60% 45%, 100% 60%, 100% 100%)",
             }}
-          >
-            ☥
-          </div>
+          />
+
+          {/* Sun disc */}
           <div
-            className="absolute text-white/25 font-serif"
+            className="absolute rounded-full"
             style={{
-              right: "10%",
-              top: "16%",
-              fontSize: "60px",
-              transform: "rotateX(-58deg) rotateZ(8deg)",
-              animation: "float 7s ease-in-out infinite 1.5s",
-              textShadow: "0 0 25px oklch(0.85 0.13 235 / 0.5)",
+              left: "50%",
+              top: "8%",
+              width: 180,
+              height: 180,
+              transform: "translate(-50%, 0) rotateX(-58deg) rotateZ(8deg)",
+              background:
+                "radial-gradient(circle, oklch(0.9 0.15 85 / 0.5), oklch(0.85 0.13 235 / 0.15) 55%, transparent 75%)",
+              filter: "blur(2px)",
+              animation: "float 10s ease-in-out infinite",
             }}
-          >
-            𓂀
-          </div>
+          />
+
+          {/* Floating hieroglyphs */}
+          <FloatingGlyph char="☥" left="12%" top="22%" size={80} delay="0s" duration="6s" />
+          <FloatingGlyph char="𓂀" right="10%" top="16%" size={60} delay="1.5s" duration="7s" />
+          <FloatingGlyph char="𓆣" left="22%" top="42%" size={44} delay="0.8s" duration="8s" />
+          <FloatingGlyph char="𓃭" right="24%" top="48%" size={48} delay="2.1s" duration="6.5s" />
+          <FloatingGlyph char="𓊪" left="42%" top="10%" size={40} delay="3s" duration="9s" />
+          <FloatingGlyph char="𓉔" right="38%" top="30%" size={42} delay="1.2s" duration="7.5s" />
         </div>
       </div>
 
@@ -204,6 +225,83 @@ function Pyramid({
           transform: `rotateY(-90deg) rotateX(-90deg) translateZ(-${half}px) translateY(${half}px)`,
         }}
       />
+    </div>
+  );
+}
+
+function Obelisk({ left, bottom, height, delay }: { left: string; bottom: string; height: number; delay: string }) {
+  const width = height * 0.14;
+  return (
+    <div
+      className="absolute"
+      style={{
+        left,
+        bottom,
+        width,
+        height,
+        transform: "translate(-50%, 0) rotateX(-58deg) rotateZ(8deg)",
+        animation: `float 7s ease-in-out infinite ${delay}`,
+        filter: "drop-shadow(0 0 25px oklch(0.85 0.13 235 / 0.55))",
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          bottom: 0,
+          width: "100%",
+          height: "88%",
+          background:
+            "linear-gradient(90deg, oklch(0.45 0.07 70) 0%, oklch(0.72 0.09 70) 50%, oklch(0.45 0.07 70) 100%)",
+          clipPath: "polygon(20% 100%, 80% 100%, 70% 0%, 30% 0%)",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          left: "30%",
+          top: 0,
+          width: "40%",
+          height: "12%",
+          background: "oklch(0.85 0.13 235)",
+          clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)",
+        }}
+      />
+    </div>
+  );
+}
+
+function FloatingGlyph({
+  char,
+  left,
+  right,
+  top,
+  size,
+  delay,
+  duration,
+}: {
+  char: string;
+  left?: string;
+  right?: string;
+  top: string;
+  size: number;
+  delay: string;
+  duration: string;
+}) {
+  return (
+    <div
+      className="absolute font-serif text-[var(--gold-bright)]/45"
+      style={{
+        left,
+        right,
+        top,
+        fontSize: `${size}px`,
+        transform: "rotateX(-58deg) rotateZ(8deg)",
+        animation: `float ${duration} ease-in-out infinite ${delay}`,
+        textShadow: "0 0 25px oklch(0.85 0.13 235 / 0.6)",
+      }}
+    >
+      {char}
     </div>
   );
 }
