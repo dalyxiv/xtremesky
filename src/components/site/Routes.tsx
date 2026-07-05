@@ -1,8 +1,22 @@
 import { Check, Plane } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 
-const gold = ["Pyramids Helipad Departure", "Giza Pyramids", "The Sphinx", "Grand Egyptian Museum (GEM)", "Return Landing"];
-const platinum = ["Pyramids Helipad", "Giza Pyramids", "Nile River", "Cairo Tower", "Saladin Citadel", "Grand Egyptian Museum (GEM)", "Return Landing"];
+const gold = [
+  "The Pyramids of Giza",
+  "The Great Sphinx",
+  "The Step Pyramid of Djoser (Saqqara)",
+  "VIP Lounge Access",
+  "Drinks & Snacks",
+];
+const platinum = [
+  "The Pyramids of Giza",
+  "The Great Sphinx",
+  "The Step Pyramid of Djoser (Saqqara)",
+  "The Grand Egyptian Museum (GEM)",
+  "The Nile River",
+  "VIP Lounge Access",
+  "Drinks & Snacks",
+];
 
 function Timeline({ items, tone }: { items: string[]; tone: "gold" | "platinum" }) {
   const color = tone === "gold" ? "var(--gold)" : "var(--platinum)";
