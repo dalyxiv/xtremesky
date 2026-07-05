@@ -24,17 +24,13 @@ export function Nav() {
           <img
             src={logo}
             alt="Xtreme Sky Egypt"
-            className="size-12 md:size-14 rounded-full object-cover ring-1 ring-white/30 shadow-[0_0_25px_-5px_rgba(255,255,255,0.4)]"
+            className="h-12 md:h-14 w-auto object-contain"
           />
-          <span className="hidden sm:block font-serif text-lg md:text-xl tracking-[0.28em] font-semibold text-white">
-            XTREME SKY
-          </span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-foreground/80">
           <a href="/#experience" className="hover:text-white transition">Experience</a>
           <a href="/#routes" className="hover:text-white transition">Routes</a>
-          <a href="/#vip" className="hover:text-white transition">VIP</a>
-          <Link to="/refund" className="hover:text-white transition">Refund</Link>
+          <Link to="/refund" className="hover:text-white transition">Refund Policy*</Link>
         </nav>
         <Link
           to="/booking"
