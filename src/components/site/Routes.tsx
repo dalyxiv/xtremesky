@@ -58,20 +58,19 @@ export function Routes() {
             <div>
               <p className="text-xs uppercase tracking-[0.4em] text-[var(--gold)]">Gold Route</p>
               <h3 className="font-serif text-3xl md:text-4xl text-gradient-gold mt-2">15 Minutes</h3>
-              <p className="text-foreground/70 mt-1">Pyramids Express</p>
+              <p className="text-foreground/70 mt-1">Quick & breathtaking</p>
             </div>
             <Plane className="size-10 text-[var(--gold)] -rotate-45" />
           </div>
 
           <div className="mb-8 rounded-xl border border-gold/30 bg-onyx/60 p-5">
-            <p className="text-3xl font-serif text-gradient-gold">$250<span className="text-base text-foreground/60"> / person</span></p>
-            <p className="text-sm text-foreground/60 mt-1">Based on 4 passengers · $1,000 total flight</p>
+            <p className="text-3xl font-serif text-gradient-gold">12500 EGP<span className="text-base text-foreground/60"> / person</span></p>
           </div>
 
           <Timeline items={gold} tone="gold" />
 
-          <a href="#booking" className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[var(--gold-bright)] to-[var(--gold)] px-6 py-3 text-sm uppercase tracking-[0.3em] font-semibold text-[var(--onyx)] hover:shadow-[0_0_40px_-2px_var(--gold)] transition">
-            Book Gold Route
+          <a href="#contact" className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[var(--gold-bright)] to-[var(--gold)] px-6 py-3 text-sm uppercase tracking-[0.3em] font-semibold text-[var(--onyx)] hover:shadow-[0_0_40px_-2px_var(--gold)] transition">
+            Book Your Flight
           </a>
         </article>
 
