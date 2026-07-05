@@ -69,7 +69,7 @@ export function Routes() {
 
           <Timeline items={gold} tone="gold" />
 
-          <a href="#contact" className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[var(--gold-bright)] to-[var(--gold)] px-6 py-3 text-sm uppercase tracking-[0.3em] font-semibold text-[var(--onyx)] hover:shadow-[0_0_40px_-2px_var(--gold)] transition">
+          <a href="/booking" className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[var(--gold-bright)] to-[var(--gold)] px-6 py-3 text-sm uppercase tracking-[0.3em] font-semibold text-[var(--onyx)] hover:shadow-[0_0_40px_-2px_var(--gold)] transition">
             Book Your Flight
           </a>
         </article>
@@ -96,7 +96,7 @@ export function Routes() {
 
           <Timeline items={platinum} tone="platinum" />
 
-          <a href="#contact" className="mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm uppercase tracking-[0.3em] font-semibold text-[var(--onyx)] transition hover:shadow-[0_0_40px_-2px_var(--platinum)]"
+          <a href="/booking" className="mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm uppercase tracking-[0.3em] font-semibold text-[var(--onyx)] transition hover:shadow-[0_0_40px_-2px_var(--platinum)]"
             style={{ background: "var(--gradient-platinum)" }}>
             Book Your Flight
           </a>
