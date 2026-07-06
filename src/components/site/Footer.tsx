@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Linkedin, Music2, Twitter, Mail } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Music2, Phone, Twitter, Mail } from "lucide-react";
 
 const socials = [
   { icon: Facebook, href: "https://www.facebook.com/xtremeskyegypt/", label: "Facebook" },
@@ -30,6 +30,18 @@ export function Footer() {
           >
             <Mail className="size-4" /> info@xtremeskyegypt.com
           </a>
+          <a
+            href="tel:+201014545086"
+            className="flex items-center justify-center md:justify-start gap-2 text-white/90 hover:text-[var(--gold-bright)] transition"
+          >
+            <Phone className="size-4" /> +2 010 14545 086
+          </a>
+          <div className="text-sm text-foreground/70 leading-relaxed pt-1">
+            <p className="text-white/90">Extreme Sky for Management, Marketing and Consulting</p>
+            <p>5A by The Waterway, New Cairo</p>
+            <p>South 90th Street, Fifth Settlement</p>
+            <p>Cairo Governorate, Egypt</p>
+          </div>
           <Link
             to="/refund"
             className="block text-sm text-foreground/70 hover:text-white underline underline-offset-4 transition"
