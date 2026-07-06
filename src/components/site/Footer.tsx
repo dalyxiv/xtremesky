@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Linkedin, Music2, Twitter, Mail } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Music2, Phone, Twitter, Mail } from "lucide-react";
 
 const socials = [
   { icon: Facebook, href: "https://www.facebook.com/xtremeskyegypt/", label: "Facebook" },
