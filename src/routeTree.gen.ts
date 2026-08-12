@@ -9,13 +9,59 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SafetyAndAircraftRouteImport } from './routes/safety-and-aircraft'
 import { Route as RefundRouteImport } from './routes/refund'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as PlanYourFlightRouteImport } from './routes/plan-your-flight'
+import { Route as ExperiencesRouteImport } from './routes/experiences'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CancellationWeatherPolicyRouteImport } from './routes/cancellation-weather-policy'
+import { Route as BookingSummaryRouteImport } from './routes/booking-summary'
 import { Route as BookingRouteImport } from './routes/booking'
+import { Route as BookRouteImport } from './routes/book'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HelicopterToursPlatinumCairoFlightRouteImport } from './routes/helicopter-tours.platinum-cairo-flight'
+import { Route as HelicopterToursGoldPyramidsFlightRouteImport } from './routes/helicopter-tours.gold-pyramids-flight'
 
+const SafetyAndAircraftRoute = SafetyAndAircraftRouteImport.update({
+  id: '/safety-and-aircraft',
+  path: '/safety-and-aircraft',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RefundRoute = RefundRouteImport.update({
   id: '/refund',
   path: '/refund',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanYourFlightRoute = PlanYourFlightRouteImport.update({
+  id: '/plan-your-flight',
+  path: '/plan-your-flight',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperiencesRoute = ExperiencesRouteImport.update({
+  id: '/experiences',
+  path: '/experiences',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CancellationWeatherPolicyRoute =
+  CancellationWeatherPolicyRouteImport.update({
+    id: '/cancellation-weather-policy',
+    path: '/cancellation-weather-policy',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BookingSummaryRoute = BookingSummaryRouteImport.update({
+  id: '/booking-summary',
+  path: '/booking-summary',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookingRoute = BookingRouteImport.update({
@@ -23,49 +69,195 @@ const BookingRoute = BookingRouteImport.update({
   path: '/booking',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HelicopterToursPlatinumCairoFlightRoute =
+  HelicopterToursPlatinumCairoFlightRouteImport.update({
+    id: '/helicopter-tours/platinum-cairo-flight',
+    path: '/helicopter-tours/platinum-cairo-flight',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const HelicopterToursGoldPyramidsFlightRoute =
+  HelicopterToursGoldPyramidsFlightRouteImport.update({
+    id: '/helicopter-tours/gold-pyramids-flight',
+    path: '/helicopter-tours/gold-pyramids-flight',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
   '/booking': typeof BookingRoute
+  '/booking-summary': typeof BookingSummaryRoute
+  '/cancellation-weather-policy': typeof CancellationWeatherPolicyRoute
+  '/contact': typeof ContactRoute
+  '/experiences': typeof ExperiencesRoute
+  '/plan-your-flight': typeof PlanYourFlightRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund': typeof RefundRoute
+  '/safety-and-aircraft': typeof SafetyAndAircraftRoute
+  '/helicopter-tours/gold-pyramids-flight': typeof HelicopterToursGoldPyramidsFlightRoute
+  '/helicopter-tours/platinum-cairo-flight': typeof HelicopterToursPlatinumCairoFlightRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
   '/booking': typeof BookingRoute
+  '/booking-summary': typeof BookingSummaryRoute
+  '/cancellation-weather-policy': typeof CancellationWeatherPolicyRoute
+  '/contact': typeof ContactRoute
+  '/experiences': typeof ExperiencesRoute
+  '/plan-your-flight': typeof PlanYourFlightRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund': typeof RefundRoute
+  '/safety-and-aircraft': typeof SafetyAndAircraftRoute
+  '/helicopter-tours/gold-pyramids-flight': typeof HelicopterToursGoldPyramidsFlightRoute
+  '/helicopter-tours/platinum-cairo-flight': typeof HelicopterToursPlatinumCairoFlightRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
   '/booking': typeof BookingRoute
+  '/booking-summary': typeof BookingSummaryRoute
+  '/cancellation-weather-policy': typeof CancellationWeatherPolicyRoute
+  '/contact': typeof ContactRoute
+  '/experiences': typeof ExperiencesRoute
+  '/plan-your-flight': typeof PlanYourFlightRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund': typeof RefundRoute
+  '/safety-and-aircraft': typeof SafetyAndAircraftRoute
+  '/helicopter-tours/gold-pyramids-flight': typeof HelicopterToursGoldPyramidsFlightRoute
+  '/helicopter-tours/platinum-cairo-flight': typeof HelicopterToursPlatinumCairoFlightRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/booking' | '/refund'
+  fullPaths:
+    | '/'
+    | '/book'
+    | '/booking'
+    | '/booking-summary'
+    | '/cancellation-weather-policy'
+    | '/contact'
+    | '/experiences'
+    | '/plan-your-flight'
+    | '/privacy-policy'
+    | '/refund'
+    | '/safety-and-aircraft'
+    | '/helicopter-tours/gold-pyramids-flight'
+    | '/helicopter-tours/platinum-cairo-flight'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/booking' | '/refund'
-  id: '__root__' | '/' | '/booking' | '/refund'
+  to:
+    | '/'
+    | '/book'
+    | '/booking'
+    | '/booking-summary'
+    | '/cancellation-weather-policy'
+    | '/contact'
+    | '/experiences'
+    | '/plan-your-flight'
+    | '/privacy-policy'
+    | '/refund'
+    | '/safety-and-aircraft'
+    | '/helicopter-tours/gold-pyramids-flight'
+    | '/helicopter-tours/platinum-cairo-flight'
+  id:
+    | '__root__'
+    | '/'
+    | '/book'
+    | '/booking'
+    | '/booking-summary'
+    | '/cancellation-weather-policy'
+    | '/contact'
+    | '/experiences'
+    | '/plan-your-flight'
+    | '/privacy-policy'
+    | '/refund'
+    | '/safety-and-aircraft'
+    | '/helicopter-tours/gold-pyramids-flight'
+    | '/helicopter-tours/platinum-cairo-flight'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookRoute: typeof BookRoute
   BookingRoute: typeof BookingRoute
+  BookingSummaryRoute: typeof BookingSummaryRoute
+  CancellationWeatherPolicyRoute: typeof CancellationWeatherPolicyRoute
+  ContactRoute: typeof ContactRoute
+  ExperiencesRoute: typeof ExperiencesRoute
+  PlanYourFlightRoute: typeof PlanYourFlightRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundRoute: typeof RefundRoute
+  SafetyAndAircraftRoute: typeof SafetyAndAircraftRoute
+  HelicopterToursGoldPyramidsFlightRoute: typeof HelicopterToursGoldPyramidsFlightRoute
+  HelicopterToursPlatinumCairoFlightRoute: typeof HelicopterToursPlatinumCairoFlightRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/safety-and-aircraft': {
+      id: '/safety-and-aircraft'
+      path: '/safety-and-aircraft'
+      fullPath: '/safety-and-aircraft'
+      preLoaderRoute: typeof SafetyAndAircraftRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/refund': {
       id: '/refund'
       path: '/refund'
       fullPath: '/refund'
       preLoaderRoute: typeof RefundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plan-your-flight': {
+      id: '/plan-your-flight'
+      path: '/plan-your-flight'
+      fullPath: '/plan-your-flight'
+      preLoaderRoute: typeof PlanYourFlightRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences': {
+      id: '/experiences'
+      path: '/experiences'
+      fullPath: '/experiences'
+      preLoaderRoute: typeof ExperiencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cancellation-weather-policy': {
+      id: '/cancellation-weather-policy'
+      path: '/cancellation-weather-policy'
+      fullPath: '/cancellation-weather-policy'
+      preLoaderRoute: typeof CancellationWeatherPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/booking-summary': {
+      id: '/booking-summary'
+      path: '/booking-summary'
+      fullPath: '/booking-summary'
+      preLoaderRoute: typeof BookingSummaryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/booking': {
@@ -75,6 +267,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -82,14 +281,50 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/helicopter-tours/platinum-cairo-flight': {
+      id: '/helicopter-tours/platinum-cairo-flight'
+      path: '/helicopter-tours/platinum-cairo-flight'
+      fullPath: '/helicopter-tours/platinum-cairo-flight'
+      preLoaderRoute: typeof HelicopterToursPlatinumCairoFlightRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/helicopter-tours/gold-pyramids-flight': {
+      id: '/helicopter-tours/gold-pyramids-flight'
+      path: '/helicopter-tours/gold-pyramids-flight'
+      fullPath: '/helicopter-tours/gold-pyramids-flight'
+      preLoaderRoute: typeof HelicopterToursGoldPyramidsFlightRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookRoute: BookRoute,
   BookingRoute: BookingRoute,
+  BookingSummaryRoute: BookingSummaryRoute,
+  CancellationWeatherPolicyRoute: CancellationWeatherPolicyRoute,
+  ContactRoute: ContactRoute,
+  ExperiencesRoute: ExperiencesRoute,
+  PlanYourFlightRoute: PlanYourFlightRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundRoute: RefundRoute,
+  SafetyAndAircraftRoute: SafetyAndAircraftRoute,
+  HelicopterToursGoldPyramidsFlightRoute:
+    HelicopterToursGoldPyramidsFlightRoute,
+  HelicopterToursPlatinumCairoFlightRoute:
+    HelicopterToursPlatinumCairoFlightRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

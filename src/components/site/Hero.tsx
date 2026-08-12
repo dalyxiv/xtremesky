@@ -135,19 +135,20 @@ export function Hero() {
           Unforgettable. Exclusive. Yours.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#routes"
+          <Link
+            to="/book"
             className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[var(--gold-bright)] to-[var(--gold)] px-10 py-4 text-sm uppercase tracking-[0.3em] font-semibold text-[var(--onyx)] animate-pulse-glow"
           >
-            Choose Your Route
-          </a>
+            Check Availability
+          </Link>
           <Link
-            to="/booking"
+            to="/experiences"
             className="inline-flex items-center gap-3 rounded-full border border-white/60 px-10 py-4 text-sm uppercase tracking-[0.3em] font-semibold text-white hover:bg-white hover:text-[var(--onyx)] transition"
           >
-            Book Now
+            View Experiences
           </Link>
         </div>
+
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-[var(--gold)]/70 text-xs uppercase tracking-[0.4em]">
           Scroll
