@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
 
 export const Route = createFileRoute("/refund")({
   head: () => ({
@@ -15,7 +17,9 @@ export const Route = createFileRoute("/refund")({
 
 function RefundPage() {
   return (
-    <main className="min-h-screen bg-onyx text-foreground px-6 py-24">
+    <main className="min-h-screen bg-onyx text-foreground">
+      <SiteHeader />
+      <div className="px-6 pb-20 pt-32">
       <div className="mx-auto max-w-3xl">
         <Link to="/" className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.3em] text-[var(--gold-bright)] hover:text-white transition mb-10">
           <ArrowLeft className="size-4" /> Back to Home
@@ -46,6 +50,8 @@ function RefundPage() {
           </li>
         </ul>
       </div>
+      </div>
+      <SiteFooter />
     </main>
   );
 }
