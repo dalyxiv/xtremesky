@@ -1,28 +1,33 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Nav } from "@/components/site/Nav";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
 import { Hero } from "@/components/site/Hero";
+import { TrustStrip } from "@/components/site/TrustStrip";
+import { RouteCompare } from "@/components/site/RouteCompare";
 import { Experience } from "@/components/site/Experience";
-import { Routes as FlightRoutes } from "@/components/site/Routes";
-import { Booking } from "@/components/site/Booking";
-import { VIP } from "@/components/site/VIP";
-import { PerfectFor } from "@/components/site/PerfectFor";
-import { Footer } from "@/components/site/Footer";
+import { SafetyPreview } from "@/components/site/SafetyPreview";
 import { Gallery } from "@/components/site/Gallery";
-
+import { ReviewsStrip } from "@/components/site/ReviewsStrip";
+import { PerfectFor } from "@/components/site/PerfectFor";
+import { HomeFaq } from "@/components/site/HomeFaq";
+import { FinalCta } from "@/components/site/FinalCta";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Xtreme Sky Egypt — Private Helicopter Tours Over Cairo & Giza" },
-      { name: "description", content: "Exclusive private helicopter tours over the Pyramids of Giza and Cairo. Only 4 seats per flight. Gold and Platinum VIP routes." },
-      { property: "og:title", content: "Xtreme Sky Egypt — Cairo From Above" },
-      { property: "og:description", content: "Experience a rare aerial perspective of ancient wonders and modern Cairo. Unforgettable. Exclusive. Yours." },
+      { title: "Helicopter Tours Over The Pyramids | Xtreme Sky Egypt" },
+      {
+        name: "description",
+        content:
+          "Private helicopter tours over the Pyramids of Giza and Cairo. Maximum 4 passengers, certified crews, live English commentary. Check availability — no upfront payment.",
+      },
+      { property: "og:title", content: "Helicopter Tours Over The Pyramids | Xtreme Sky Egypt" },
+      {
+        property: "og:description",
+        content: "Gold and Platinum aerial routes above Giza, Saqqara, the Grand Egyptian Museum and the Nile.",
+      },
       { property: "og:type", content: "website" },
-    ],
-    links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -31,16 +36,18 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="bg-onyx text-foreground">
-      <Nav />
+      <SiteHeader />
       <Hero />
+      <TrustStrip />
+      <RouteCompare />
       <Experience />
-      <FlightRoutes />
-      <Booking />
-      <VIP />
-      <PerfectFor />
+      <SafetyPreview />
       <Gallery />
-      
-      <Footer />
+      <ReviewsStrip />
+      <PerfectFor />
+      <HomeFaq />
+      <FinalCta />
+      <SiteFooter />
     </main>
   );
 }
