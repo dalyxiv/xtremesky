@@ -12,6 +12,7 @@ export type TourRoute = {
   features: string[];
   path: string;
   badge?: string;
+  upgrades?: string[];
 };
 
 export const TOURS: Record<RouteKey, TourRoute> = {
@@ -30,7 +31,8 @@ export const TOURS: Record<RouteKey, TourRoute> = {
       "Saqqara skyline",
     ],
     features: ["VIP lounge check-in", "Full safety briefing", "Commemorative flight certificate"],
-    path: "/helicopter-tours/gold-pyramids-flight",
+    upgrades: ["Hotel transfers (quoted on request)", "In-flight video package", "Private charter of the full cabin"],
+    path: "/tours/pyramids-sphinx-discovery",
   },
   platinum: {
     key: "platinum",
@@ -52,8 +54,9 @@ export const TOURS: Record<RouteKey, TourRoute> = {
       "Live English commentary",
       "Lounge refreshments",
     ],
-    path: "/helicopter-tours/platinum-cairo-flight",
+    path: "/tours/cairo-heritage-panorama",
     badge: "Best for the Complete Cairo Experience",
+    upgrades: ["Hotel transfers (quoted on request)", "In-flight video package", "Proposal & celebration coordination"],
   },
 };
 

@@ -15,26 +15,41 @@ const columns = [
   {
     title: "Experiences",
     items: [
-      { label: "All Experiences", to: "/experiences" as const },
-      { label: "Gold Pyramids Flight", to: "/helicopter-tours/gold-pyramids-flight" as const },
-      { label: "Platinum Cairo Flight", to: "/helicopter-tours/platinum-cairo-flight" as const },
-      { label: "Check Availability", to: "/book" as const },
+      { label: "All experiences", to: "/experiences" as const },
+      { label: "Pyramids & Sphinx Discovery", to: "/tours/pyramids-sphinx-discovery" as const },
+      { label: "Cairo Heritage Panorama", to: "/tours/cairo-heritage-panorama" as const },
+      { label: "Flight routes", to: "/flight-routes" as const },
+      { label: "Check availability", to: "/book" as const },
     ],
   },
   {
-    title: "Plan & Trust",
+    title: "Guest information",
     items: [
-      { label: "Plan Your Flight", to: "/plan-your-flight" as const },
-      { label: "Safety & Aircraft", to: "/safety-and-aircraft" as const },
+      { label: "What to expect", to: "/what-to-expect" as const },
+      { label: "Our helicopter", to: "/our-helicopter" as const },
+      { label: "Passenger requirements", to: "/passenger-requirements" as const },
+      { label: "Directions", to: "/directions" as const },
+      { label: "Accessibility", to: "/accessibility" as const },
+    ],
+  },
+  {
+    title: "Plan & trust",
+    items: [
+      { label: "Why Xtreme Sky", to: "/why-xtreme-sky" as const },
+      { label: "Safety & operator disclosure", to: "/safety" as const },
+      { label: "FAQs", to: "/faq" as const },
+      { label: "Proposals & celebrations", to: "/proposals-celebrations" as const },
+      { label: "Groups & DMC", to: "/groups-dmc" as const },
+      { label: "Manage booking", to: "/manage-booking" as const },
+    ],
+  },
+  {
+    title: "Contact & legal",
+    items: [
       { label: "Contact", to: "/contact" as const },
-    ],
-  },
-  {
-    title: "Policies",
-    items: [
-      { label: "Cancellation & Weather", to: "/cancellation-weather-policy" as const },
-      { label: "Refund Policy", to: "/refund" as const },
-      { label: "Privacy Policy", to: "/privacy-policy" as const },
+      { label: "Cancellation & weather policy", to: "/refund" as const },
+      { label: "Privacy notice", to: "/privacy" as const },
+      { label: "Terms & conditions", to: "/terms" as const },
     ],
   },
 ];
@@ -42,7 +57,7 @@ const columns = [
 export function SiteFooter() {
   return (
     <footer className="border-t border-gold/20 bg-onyx px-6 py-14">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-5">
         <div className="space-y-4">
           <img src={logo} alt="Xtreme Sky Egypt" className="h-20 w-auto object-contain" />
           <p className="text-sm leading-relaxed text-foreground/65">

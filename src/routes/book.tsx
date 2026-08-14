@@ -76,6 +76,10 @@ function BookPage() {
   const [phone, setPhone] = useState("");
   const [country, setCountry] = useState("");
   const [notes, setNotes] = useState("");
+  const [confirmChannel, setConfirmChannel] = useState("Email");
+  const [video, setVideo] = useState(false);
+  const [agreeTerms, setAgreeTerms] = useState(false);
+  const [agreeWeather, setAgreeWeather] = useState(false);
 
   const tour = TOURS[routeKey];
   const estimate =
@@ -105,6 +109,10 @@ function BookPage() {
 
   const submit = () => {
     if (!validateStep()) return;
+    if (!agreeTerms || !agreeWeather) {
+      setErrors({ consent: "Please confirm both statements before submitting." });
+      return;
+    }
     setSubmitting(true);
     const reference = `XSE-${Date.now().toString(36).toUpperCase().slice(-6)}`;
     const payload: BookingRequest = {
@@ -123,7 +131,9 @@ function BookPage() {
       email,
       phone,
       country,
-      notes,
+      notes: [notes, video ? "Add-on requested: onboard video package" : "", `Preferred confirmation: ${confirmChannel}`]
+        .filter(Boolean)
+        .join(" | "),
       estimateUsd: estimate,
       currency,
       submittedAt: new Date().toISOString(),
@@ -247,6 +257,10 @@ function BookPage() {
                   <input type="checkbox" checked={transfer} onChange={(e) => setTransfer(e.target.checked)} className="size-4 accent-[var(--gold)]" />
                   I would like a hotel transfer quote
                 </label>
+                <label className="flex items-center gap-3 text-sm text-foreground/80 sm:col-span-2">
+                  <input type="checkbox" checked={video} onChange={(e) => setVideo(e.target.checked)} className="size-4 accent-[var(--gold)]" />
+                  Add the onboard video package (priced with your confirmation)
+                </label>
               </div>
             )}
 
@@ -271,6 +285,14 @@ function BookPage() {
                   <label className={labelCls} htmlFor="country">Country</label>
                   <input id="country" value={country} onChange={(e) => setCountry(e.target.value)} maxLength={80} className={inputCls} />
                   {errors.country && <p className="mt-1 text-xs text-destructive">{errors.country}</p>}
+                </div>
+                <div>
+                  <label className={labelCls} htmlFor="channel">Preferred confirmation channel</label>
+                  <select id="channel" value={confirmChannel} onChange={(e) => setConfirmChannel(e.target.value)} className={inputCls}>
+                    <option>Email</option>
+                    <option>WhatsApp</option>
+                    <option>Phone call</option>
+                  </select>
                 </div>
                 <div className="sm:col-span-2">
                   <label className={labelCls} htmlFor="notes">Anything else we should know?</label>
@@ -306,6 +328,23 @@ function BookPage() {
                   <p className="mt-2 font-serif text-3xl text-gradient-gold">{format(estimate)}</p>
                   <CurrencyDisclaimer className="mt-2" />
                 </div>
+                <div className="space-y-3 rounded-xl border border-gold/20 bg-onyx/60 p-5 text-sm text-foreground/80">
+                  <label className="flex items-start gap-3">
+                    <input type="checkbox" checked={agreeTerms} onChange={(e) => setAgreeTerms(e.target.checked)} className="mt-0.5 size-4 accent-[var(--gold)]" />
+                    <span>
+                      I have read the <Link to="/terms" className="text-[var(--gold-bright)] underline underline-offset-4">booking terms</Link> and{" "}
+                      <Link to="/privacy" className="text-[var(--gold-bright)] underline underline-offset-4">privacy notice</Link>.
+                    </span>
+                  </label>
+                  <label className="flex items-start gap-3">
+                    <input type="checkbox" checked={agreeWeather} onChange={(e) => setAgreeWeather(e.target.checked)} className="mt-0.5 size-4 accent-[var(--gold)]" />
+                    <span>
+                      I understand flights depend on clearance and weather, and that this request is reviewed by
+                      operations before any payment is taken.
+                    </span>
+                  </label>
+                  {errors.consent && <p className="text-xs text-destructive">{errors.consent}</p>}
+                </div>
                 <p className="text-sm text-foreground/70">
                   Submitting sends an availability request only. No card details are collected and nothing is charged.
                 </p>
@@ -336,7 +375,7 @@ function BookPage() {
                   disabled={submitting}
                   className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--gold-bright)] to-[var(--gold)] px-6 py-3 text-xs font-semibold uppercase tracking-widest text-[var(--onyx)] transition hover:shadow-[0_0_30px_-4px_var(--gold)] disabled:opacity-60"
                 >
-                  {submitting && <Loader2 className="size-4 animate-spin" />} Submit Request
+                  {submitting && <Loader2 className="size-4 animate-spin" />} Submit for operational approval
                 </button>
               )}
             </div>

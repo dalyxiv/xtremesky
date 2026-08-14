@@ -1,44 +1,34 @@
 import { Link } from "@tanstack/react-router";
-import { BadgeCheck, CloudSun, Gauge, ShieldCheck } from "lucide-react";
+import { Eyebrow, StatusList } from "@/components/site/blocks";
 import { useReveal } from "@/hooks/use-reveal";
-
-const items = [
-  { icon: BadgeCheck, title: "Licensed crew", desc: "Experienced pilots in Cairo airspace." },
-  { icon: Gauge, title: "Maintained fleet", desc: "Documented pre-flight inspections." },
-  { icon: CloudSun, title: "Weather limits", desc: "Defined go / no-go criteria." },
-  { icon: ShieldCheck, title: "Authorized routes", desc: "Approved corridors and ATC clearance." },
-];
+import { SAFETY_REGISTER } from "@/lib/site-content";
 
 export function SafetyPreview() {
   const ref = useReveal<HTMLDivElement>();
+  const items = [
+    ...SAFETY_REGISTER.filter((i) => i.status !== "pending").slice(0, 3),
+    ...SAFETY_REGISTER.filter((i) => i.status === "pending").slice(0, 3),
+  ];
+
   return (
-    <section ref={ref} className="border-y border-gold/15 bg-charcoal/40 px-6 py-24">
-      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-        <div>
-          <p className="reveal text-xs uppercase tracking-[0.5em] text-[var(--gold-bright)]">Safety First</p>
-          <h2 className="reveal mt-4 font-serif text-3xl text-gradient-gold md:text-4xl">
-            Luxury Means Nothing Without Discipline
-          </h2>
-          <p className="reveal mt-5 leading-relaxed text-foreground/75">
-            Every flight follows structured operational standards — from crew licensing and maintenance records to
-            weather criteria and passenger weight-and-balance planning.
-          </p>
-          <Link
-            to="/safety-and-aircraft"
-            className="reveal mt-7 inline-flex rounded-full border border-gold/40 px-6 py-3 text-xs uppercase tracking-widest text-[var(--gold-bright)] transition hover:border-[var(--gold)] hover:text-white"
-          >
-            Read Our Safety Standards
-          </Link>
+    <section ref={ref} className="border-t border-[var(--border-hairline)] bg-onyx px-6 py-24">
+      <div className="mx-auto max-w-4xl">
+        <div className="reveal">
+          <Eyebrow>Operator & safety transparency</Eyebrow>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {items.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="reveal rounded-2xl border border-gold/20 bg-onyx/60 p-6">
-              <Icon className="size-5 text-[var(--gold-bright)]" />
-              <h3 className="mt-3 font-serif text-lg text-white">{title}</h3>
-              <p className="mt-1 text-sm text-foreground/70">{desc}</p>
-            </div>
-          ))}
+        <h2 className="reveal mt-4 font-serif text-3xl text-white md:text-4xl">
+          Published now, or awaiting documents
+        </h2>
+        <p className="reveal mt-4 text-[17px] leading-[1.7] text-foreground/65">
+          We list credentials with their real status instead of implying approval. Nothing here is described as
+          confirmed until the paperwork supports it.
+        </p>
+        <div className="reveal mt-8">
+          <StatusList items={items} />
         </div>
+        <Link to="/safety" className="reveal mt-6 inline-block text-sm text-[var(--gold-bright)] underline underline-offset-4">
+          Read the full documentary register
+        </Link>
       </div>
     </section>
   );
