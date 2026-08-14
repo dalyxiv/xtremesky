@@ -1,35 +1,42 @@
-import { Heart, Users, Crown, Gem, PartyPopper } from "lucide-react";
-import img from "@/assets/heli-6.jpeg";
-import { useReveal } from "@/hooks/use-reveal";
-
-const icons = [
-  { icon: Heart, label: "Couples" },
-  { icon: Users, label: "Families" },
-  { icon: Crown, label: "VIP Guests" },
-  { icon: Gem, label: "Proposals" },
-  { icon: PartyPopper, label: "Celebrations" },
-];
+import { Link } from "@tanstack/react-router";
+import { Eyebrow } from "@/components/site/blocks";
+import { OCCASIONS } from "@/lib/site-content";
 
 export function PerfectFor() {
-  const ref = useReveal<HTMLDivElement>();
   return (
-    <section ref={ref} className="relative py-28 overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <img src={img} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-onyx via-onyx/85 to-onyx/40" />
-      </div>
-      <div className="mx-auto max-w-4xl px-6">
-        <p className="reveal text-xs uppercase tracking-[0.5em] text-[var(--gold)] mb-4">Perfect For</p>
-        <h2 className="reveal font-serif text-3xl md:text-5xl text-gradient-gold leading-tight mb-8">
-          A breathtaking proposal, a romantic sunset flight, or a memorable family adventure — crafted for you.
-        </h2>
-        <div className="reveal flex flex-wrap gap-4">
-          {icons.map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-2 rounded-full border border-gold/30 bg-onyx/70 px-4 py-2 text-sm text-[var(--gold)]">
-              <Icon className="size-4" />
-              {label}
-            </div>
+    <section className="border-t border-[var(--border-hairline)] bg-onyx px-6 py-24">
+      <div className="mx-auto max-w-4xl">
+        <Eyebrow>Occasions</Eyebrow>
+        <h2 className="mt-4 font-serif text-3xl text-white md:text-4xl">Who books these flights</h2>
+        <div className="mt-6 flex flex-wrap gap-3">
+          {OCCASIONS.map((o) => (
+            <span
+              key={o}
+              className="rounded border border-[var(--border-hairline)] bg-charcoal/50 px-4 py-2 text-sm text-foreground/80"
+            >
+              {o}
+            </span>
           ))}
+        </div>
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
+          <div className="rounded-md border border-[var(--border-hairline)] bg-charcoal/40 p-6">
+            <h3 className="font-serif text-xl text-white">Proposals & celebrations</h3>
+            <p className="mt-2 text-sm leading-relaxed text-foreground/65">
+              Private cabins, seating arranged for the view and crew briefed on the occasion.
+            </p>
+            <Link to="/proposals-celebrations" className="mt-4 inline-block text-sm text-[var(--gold-bright)] underline underline-offset-4">
+              Plan an occasion
+            </Link>
+          </div>
+          <div className="rounded-md border border-[var(--border-hairline)] bg-charcoal/40 p-6">
+            <h3 className="font-serif text-xl text-white">Travel trade & DMC partners</h3>
+            <p className="mt-2 text-sm leading-relaxed text-foreground/65">
+              Manifest-based booking, sequenced departures and invoicing against approved passenger lists.
+            </p>
+            <Link to="/groups-dmc" className="mt-4 inline-block text-sm text-[var(--gold-bright)] underline underline-offset-4">
+              Trade information
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -17,17 +17,23 @@ export function FinalCta() {
         <div className="mt-9 flex flex-wrap justify-center gap-4">
           <Link
             to="/book"
-            className="inline-flex rounded-full bg-gradient-to-r from-[var(--gold-bright)] to-[var(--gold)] px-8 py-4 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--onyx)] transition hover:shadow-[0_0_40px_-4px_var(--gold)]"
+            className="inline-flex rounded bg-gradient-to-r from-[var(--gold-bright)] to-[var(--gold)] px-8 py-4 text-[12px] font-semibold uppercase tracking-[0.16em] text-[var(--onyx)] transition hover:shadow-[0_0_40px_-8px_var(--gold)]"
           >
-            Check Availability
+            Check availability
+          </Link>
+          <Link
+            to="/manage-booking"
+            className="inline-flex rounded border border-gold/40 px-8 py-4 text-[12px] uppercase tracking-[0.16em] text-[var(--gold-bright)] transition hover:border-[var(--gold)] hover:text-white"
+          >
+            Manage booking
           </Link>
           <a
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-white/50 px-8 py-4 text-xs uppercase tracking-[0.3em] text-white transition hover:bg-white hover:text-[var(--onyx)]"
+            className="inline-flex items-center gap-2 rounded border border-white/40 px-8 py-4 text-[12px] uppercase tracking-[0.16em] text-white transition hover:bg-white hover:text-[var(--onyx)]"
           >
-            <MessageCircle className="size-4" /> WhatsApp Us
+            <MessageCircle className="size-4" /> WhatsApp
           </a>
         </div>
       </div>

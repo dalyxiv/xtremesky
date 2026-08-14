@@ -9,23 +9,59 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WhyXtremeSkyRouteImport } from './routes/why-xtreme-sky'
+import { Route as WhatToExpectRouteImport } from './routes/what-to-expect'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SafetyAndAircraftRouteImport } from './routes/safety-and-aircraft'
+import { Route as SafetyRouteImport } from './routes/safety'
 import { Route as RefundRouteImport } from './routes/refund'
+import { Route as ProposalsCelebrationsRouteImport } from './routes/proposals-celebrations'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PlanYourFlightRouteImport } from './routes/plan-your-flight'
+import { Route as PassengerRequirementsRouteImport } from './routes/passenger-requirements'
+import { Route as OurHelicopterRouteImport } from './routes/our-helicopter'
+import { Route as ManageBookingRouteImport } from './routes/manage-booking'
+import { Route as GroupsDmcRouteImport } from './routes/groups-dmc'
+import { Route as FlightRoutesRouteImport } from './routes/flight-routes'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
+import { Route as DirectionsRouteImport } from './routes/directions'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CancellationWeatherPolicyRouteImport } from './routes/cancellation-weather-policy'
 import { Route as BookingSummaryRouteImport } from './routes/booking-summary'
 import { Route as BookingRouteImport } from './routes/booking'
 import { Route as BookRouteImport } from './routes/book'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ToursPyramidsSphinxDiscoveryRouteImport } from './routes/tours.pyramids-sphinx-discovery'
+import { Route as ToursCairoHeritagePanoramaRouteImport } from './routes/tours.cairo-heritage-panorama'
 import { Route as HelicopterToursPlatinumCairoFlightRouteImport } from './routes/helicopter-tours.platinum-cairo-flight'
 import { Route as HelicopterToursGoldPyramidsFlightRouteImport } from './routes/helicopter-tours.gold-pyramids-flight'
 
+const WhyXtremeSkyRoute = WhyXtremeSkyRouteImport.update({
+  id: '/why-xtreme-sky',
+  path: '/why-xtreme-sky',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhatToExpectRoute = WhatToExpectRouteImport.update({
+  id: '/what-to-expect',
+  path: '/what-to-expect',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SafetyAndAircraftRoute = SafetyAndAircraftRouteImport.update({
   id: '/safety-and-aircraft',
   path: '/safety-and-aircraft',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafetyRoute = SafetyRouteImport.update({
+  id: '/safety',
+  path: '/safety',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RefundRoute = RefundRouteImport.update({
@@ -33,9 +69,19 @@ const RefundRoute = RefundRouteImport.update({
   path: '/refund',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProposalsCelebrationsRoute = ProposalsCelebrationsRouteImport.update({
+  id: '/proposals-celebrations',
+  path: '/proposals-celebrations',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlanYourFlightRoute = PlanYourFlightRouteImport.update({
@@ -43,9 +89,44 @@ const PlanYourFlightRoute = PlanYourFlightRouteImport.update({
   path: '/plan-your-flight',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PassengerRequirementsRoute = PassengerRequirementsRouteImport.update({
+  id: '/passenger-requirements',
+  path: '/passenger-requirements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurHelicopterRoute = OurHelicopterRouteImport.update({
+  id: '/our-helicopter',
+  path: '/our-helicopter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManageBookingRoute = ManageBookingRouteImport.update({
+  id: '/manage-booking',
+  path: '/manage-booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GroupsDmcRoute = GroupsDmcRouteImport.update({
+  id: '/groups-dmc',
+  path: '/groups-dmc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FlightRoutesRoute = FlightRoutesRouteImport.update({
+  id: '/flight-routes',
+  path: '/flight-routes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ExperiencesRoute = ExperiencesRouteImport.update({
   id: '/experiences',
   path: '/experiences',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DirectionsRoute = DirectionsRouteImport.update({
+  id: '/directions',
+  path: '/directions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -74,11 +155,28 @@ const BookRoute = BookRouteImport.update({
   path: '/book',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ToursPyramidsSphinxDiscoveryRoute =
+  ToursPyramidsSphinxDiscoveryRouteImport.update({
+    id: '/tours/pyramids-sphinx-discovery',
+    path: '/tours/pyramids-sphinx-discovery',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ToursCairoHeritagePanoramaRoute =
+  ToursCairoHeritagePanoramaRouteImport.update({
+    id: '/tours/cairo-heritage-panorama',
+    path: '/tours/cairo-heritage-panorama',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const HelicopterToursPlatinumCairoFlightRoute =
   HelicopterToursPlatinumCairoFlightRouteImport.update({
     id: '/helicopter-tours/platinum-cairo-flight',
@@ -94,121 +192,261 @@ const HelicopterToursGoldPyramidsFlightRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/accessibility': typeof AccessibilityRoute
   '/book': typeof BookRoute
   '/booking': typeof BookingRoute
   '/booking-summary': typeof BookingSummaryRoute
   '/cancellation-weather-policy': typeof CancellationWeatherPolicyRoute
   '/contact': typeof ContactRoute
+  '/directions': typeof DirectionsRoute
   '/experiences': typeof ExperiencesRoute
+  '/faq': typeof FaqRoute
+  '/flight-routes': typeof FlightRoutesRoute
+  '/groups-dmc': typeof GroupsDmcRoute
+  '/manage-booking': typeof ManageBookingRoute
+  '/our-helicopter': typeof OurHelicopterRoute
+  '/passenger-requirements': typeof PassengerRequirementsRoute
   '/plan-your-flight': typeof PlanYourFlightRoute
+  '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/proposals-celebrations': typeof ProposalsCelebrationsRoute
   '/refund': typeof RefundRoute
+  '/safety': typeof SafetyRoute
   '/safety-and-aircraft': typeof SafetyAndAircraftRoute
+  '/terms': typeof TermsRoute
+  '/what-to-expect': typeof WhatToExpectRoute
+  '/why-xtreme-sky': typeof WhyXtremeSkyRoute
   '/helicopter-tours/gold-pyramids-flight': typeof HelicopterToursGoldPyramidsFlightRoute
   '/helicopter-tours/platinum-cairo-flight': typeof HelicopterToursPlatinumCairoFlightRoute
+  '/tours/cairo-heritage-panorama': typeof ToursCairoHeritagePanoramaRoute
+  '/tours/pyramids-sphinx-discovery': typeof ToursPyramidsSphinxDiscoveryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/accessibility': typeof AccessibilityRoute
   '/book': typeof BookRoute
   '/booking': typeof BookingRoute
   '/booking-summary': typeof BookingSummaryRoute
   '/cancellation-weather-policy': typeof CancellationWeatherPolicyRoute
   '/contact': typeof ContactRoute
+  '/directions': typeof DirectionsRoute
   '/experiences': typeof ExperiencesRoute
+  '/faq': typeof FaqRoute
+  '/flight-routes': typeof FlightRoutesRoute
+  '/groups-dmc': typeof GroupsDmcRoute
+  '/manage-booking': typeof ManageBookingRoute
+  '/our-helicopter': typeof OurHelicopterRoute
+  '/passenger-requirements': typeof PassengerRequirementsRoute
   '/plan-your-flight': typeof PlanYourFlightRoute
+  '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/proposals-celebrations': typeof ProposalsCelebrationsRoute
   '/refund': typeof RefundRoute
+  '/safety': typeof SafetyRoute
   '/safety-and-aircraft': typeof SafetyAndAircraftRoute
+  '/terms': typeof TermsRoute
+  '/what-to-expect': typeof WhatToExpectRoute
+  '/why-xtreme-sky': typeof WhyXtremeSkyRoute
   '/helicopter-tours/gold-pyramids-flight': typeof HelicopterToursGoldPyramidsFlightRoute
   '/helicopter-tours/platinum-cairo-flight': typeof HelicopterToursPlatinumCairoFlightRoute
+  '/tours/cairo-heritage-panorama': typeof ToursCairoHeritagePanoramaRoute
+  '/tours/pyramids-sphinx-discovery': typeof ToursPyramidsSphinxDiscoveryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/accessibility': typeof AccessibilityRoute
   '/book': typeof BookRoute
   '/booking': typeof BookingRoute
   '/booking-summary': typeof BookingSummaryRoute
   '/cancellation-weather-policy': typeof CancellationWeatherPolicyRoute
   '/contact': typeof ContactRoute
+  '/directions': typeof DirectionsRoute
   '/experiences': typeof ExperiencesRoute
+  '/faq': typeof FaqRoute
+  '/flight-routes': typeof FlightRoutesRoute
+  '/groups-dmc': typeof GroupsDmcRoute
+  '/manage-booking': typeof ManageBookingRoute
+  '/our-helicopter': typeof OurHelicopterRoute
+  '/passenger-requirements': typeof PassengerRequirementsRoute
   '/plan-your-flight': typeof PlanYourFlightRoute
+  '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/proposals-celebrations': typeof ProposalsCelebrationsRoute
   '/refund': typeof RefundRoute
+  '/safety': typeof SafetyRoute
   '/safety-and-aircraft': typeof SafetyAndAircraftRoute
+  '/terms': typeof TermsRoute
+  '/what-to-expect': typeof WhatToExpectRoute
+  '/why-xtreme-sky': typeof WhyXtremeSkyRoute
   '/helicopter-tours/gold-pyramids-flight': typeof HelicopterToursGoldPyramidsFlightRoute
   '/helicopter-tours/platinum-cairo-flight': typeof HelicopterToursPlatinumCairoFlightRoute
+  '/tours/cairo-heritage-panorama': typeof ToursCairoHeritagePanoramaRoute
+  '/tours/pyramids-sphinx-discovery': typeof ToursPyramidsSphinxDiscoveryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/accessibility'
     | '/book'
     | '/booking'
     | '/booking-summary'
     | '/cancellation-weather-policy'
     | '/contact'
+    | '/directions'
     | '/experiences'
+    | '/faq'
+    | '/flight-routes'
+    | '/groups-dmc'
+    | '/manage-booking'
+    | '/our-helicopter'
+    | '/passenger-requirements'
     | '/plan-your-flight'
+    | '/privacy'
     | '/privacy-policy'
+    | '/proposals-celebrations'
     | '/refund'
+    | '/safety'
     | '/safety-and-aircraft'
+    | '/terms'
+    | '/what-to-expect'
+    | '/why-xtreme-sky'
     | '/helicopter-tours/gold-pyramids-flight'
     | '/helicopter-tours/platinum-cairo-flight'
+    | '/tours/cairo-heritage-panorama'
+    | '/tours/pyramids-sphinx-discovery'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/accessibility'
     | '/book'
     | '/booking'
     | '/booking-summary'
     | '/cancellation-weather-policy'
     | '/contact'
+    | '/directions'
     | '/experiences'
+    | '/faq'
+    | '/flight-routes'
+    | '/groups-dmc'
+    | '/manage-booking'
+    | '/our-helicopter'
+    | '/passenger-requirements'
     | '/plan-your-flight'
+    | '/privacy'
     | '/privacy-policy'
+    | '/proposals-celebrations'
     | '/refund'
+    | '/safety'
     | '/safety-and-aircraft'
+    | '/terms'
+    | '/what-to-expect'
+    | '/why-xtreme-sky'
     | '/helicopter-tours/gold-pyramids-flight'
     | '/helicopter-tours/platinum-cairo-flight'
+    | '/tours/cairo-heritage-panorama'
+    | '/tours/pyramids-sphinx-discovery'
   id:
     | '__root__'
     | '/'
+    | '/accessibility'
     | '/book'
     | '/booking'
     | '/booking-summary'
     | '/cancellation-weather-policy'
     | '/contact'
+    | '/directions'
     | '/experiences'
+    | '/faq'
+    | '/flight-routes'
+    | '/groups-dmc'
+    | '/manage-booking'
+    | '/our-helicopter'
+    | '/passenger-requirements'
     | '/plan-your-flight'
+    | '/privacy'
     | '/privacy-policy'
+    | '/proposals-celebrations'
     | '/refund'
+    | '/safety'
     | '/safety-and-aircraft'
+    | '/terms'
+    | '/what-to-expect'
+    | '/why-xtreme-sky'
     | '/helicopter-tours/gold-pyramids-flight'
     | '/helicopter-tours/platinum-cairo-flight'
+    | '/tours/cairo-heritage-panorama'
+    | '/tours/pyramids-sphinx-discovery'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccessibilityRoute: typeof AccessibilityRoute
   BookRoute: typeof BookRoute
   BookingRoute: typeof BookingRoute
   BookingSummaryRoute: typeof BookingSummaryRoute
   CancellationWeatherPolicyRoute: typeof CancellationWeatherPolicyRoute
   ContactRoute: typeof ContactRoute
+  DirectionsRoute: typeof DirectionsRoute
   ExperiencesRoute: typeof ExperiencesRoute
+  FaqRoute: typeof FaqRoute
+  FlightRoutesRoute: typeof FlightRoutesRoute
+  GroupsDmcRoute: typeof GroupsDmcRoute
+  ManageBookingRoute: typeof ManageBookingRoute
+  OurHelicopterRoute: typeof OurHelicopterRoute
+  PassengerRequirementsRoute: typeof PassengerRequirementsRoute
   PlanYourFlightRoute: typeof PlanYourFlightRoute
+  PrivacyRoute: typeof PrivacyRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ProposalsCelebrationsRoute: typeof ProposalsCelebrationsRoute
   RefundRoute: typeof RefundRoute
+  SafetyRoute: typeof SafetyRoute
   SafetyAndAircraftRoute: typeof SafetyAndAircraftRoute
+  TermsRoute: typeof TermsRoute
+  WhatToExpectRoute: typeof WhatToExpectRoute
+  WhyXtremeSkyRoute: typeof WhyXtremeSkyRoute
   HelicopterToursGoldPyramidsFlightRoute: typeof HelicopterToursGoldPyramidsFlightRoute
   HelicopterToursPlatinumCairoFlightRoute: typeof HelicopterToursPlatinumCairoFlightRoute
+  ToursCairoHeritagePanoramaRoute: typeof ToursCairoHeritagePanoramaRoute
+  ToursPyramidsSphinxDiscoveryRoute: typeof ToursPyramidsSphinxDiscoveryRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/why-xtreme-sky': {
+      id: '/why-xtreme-sky'
+      path: '/why-xtreme-sky'
+      fullPath: '/why-xtreme-sky'
+      preLoaderRoute: typeof WhyXtremeSkyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/what-to-expect': {
+      id: '/what-to-expect'
+      path: '/what-to-expect'
+      fullPath: '/what-to-expect'
+      preLoaderRoute: typeof WhatToExpectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/safety-and-aircraft': {
       id: '/safety-and-aircraft'
       path: '/safety-and-aircraft'
       fullPath: '/safety-and-aircraft'
       preLoaderRoute: typeof SafetyAndAircraftRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safety': {
+      id: '/safety'
+      path: '/safety'
+      fullPath: '/safety'
+      preLoaderRoute: typeof SafetyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/refund': {
@@ -218,11 +456,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RefundRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/proposals-celebrations': {
+      id: '/proposals-celebrations'
+      path: '/proposals-celebrations'
+      fullPath: '/proposals-celebrations'
+      preLoaderRoute: typeof ProposalsCelebrationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy-policy': {
       id: '/privacy-policy'
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/plan-your-flight': {
@@ -232,11 +484,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlanYourFlightRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/passenger-requirements': {
+      id: '/passenger-requirements'
+      path: '/passenger-requirements'
+      fullPath: '/passenger-requirements'
+      preLoaderRoute: typeof PassengerRequirementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-helicopter': {
+      id: '/our-helicopter'
+      path: '/our-helicopter'
+      fullPath: '/our-helicopter'
+      preLoaderRoute: typeof OurHelicopterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manage-booking': {
+      id: '/manage-booking'
+      path: '/manage-booking'
+      fullPath: '/manage-booking'
+      preLoaderRoute: typeof ManageBookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/groups-dmc': {
+      id: '/groups-dmc'
+      path: '/groups-dmc'
+      fullPath: '/groups-dmc'
+      preLoaderRoute: typeof GroupsDmcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/flight-routes': {
+      id: '/flight-routes'
+      path: '/flight-routes'
+      fullPath: '/flight-routes'
+      preLoaderRoute: typeof FlightRoutesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/experiences': {
       id: '/experiences'
       path: '/experiences'
       fullPath: '/experiences'
       preLoaderRoute: typeof ExperiencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/directions': {
+      id: '/directions'
+      path: '/directions'
+      fullPath: '/directions'
+      preLoaderRoute: typeof DirectionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -274,11 +575,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/pyramids-sphinx-discovery': {
+      id: '/tours/pyramids-sphinx-discovery'
+      path: '/tours/pyramids-sphinx-discovery'
+      fullPath: '/tours/pyramids-sphinx-discovery'
+      preLoaderRoute: typeof ToursPyramidsSphinxDiscoveryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/cairo-heritage-panorama': {
+      id: '/tours/cairo-heritage-panorama'
+      path: '/tours/cairo-heritage-panorama'
+      fullPath: '/tours/cairo-heritage-panorama'
+      preLoaderRoute: typeof ToursCairoHeritagePanoramaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/helicopter-tours/platinum-cairo-flight': {
@@ -300,20 +622,36 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccessibilityRoute: AccessibilityRoute,
   BookRoute: BookRoute,
   BookingRoute: BookingRoute,
   BookingSummaryRoute: BookingSummaryRoute,
   CancellationWeatherPolicyRoute: CancellationWeatherPolicyRoute,
   ContactRoute: ContactRoute,
+  DirectionsRoute: DirectionsRoute,
   ExperiencesRoute: ExperiencesRoute,
+  FaqRoute: FaqRoute,
+  FlightRoutesRoute: FlightRoutesRoute,
+  GroupsDmcRoute: GroupsDmcRoute,
+  ManageBookingRoute: ManageBookingRoute,
+  OurHelicopterRoute: OurHelicopterRoute,
+  PassengerRequirementsRoute: PassengerRequirementsRoute,
   PlanYourFlightRoute: PlanYourFlightRoute,
+  PrivacyRoute: PrivacyRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ProposalsCelebrationsRoute: ProposalsCelebrationsRoute,
   RefundRoute: RefundRoute,
+  SafetyRoute: SafetyRoute,
   SafetyAndAircraftRoute: SafetyAndAircraftRoute,
+  TermsRoute: TermsRoute,
+  WhatToExpectRoute: WhatToExpectRoute,
+  WhyXtremeSkyRoute: WhyXtremeSkyRoute,
   HelicopterToursGoldPyramidsFlightRoute:
     HelicopterToursGoldPyramidsFlightRoute,
   HelicopterToursPlatinumCairoFlightRoute:
     HelicopterToursPlatinumCairoFlightRoute,
+  ToursCairoHeritagePanoramaRoute: ToursCairoHeritagePanoramaRoute,
+  ToursPyramidsSphinxDiscoveryRoute: ToursPyramidsSphinxDiscoveryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
